@@ -1,0 +1,1 @@
+2024-12-30 16:41:52,613 - ERROR - Failed to connect to Neo4j: {code: Neo.DatabaseError.Transaction.TransactionStartFailed} {message: The database has encountered a critical error, and needs to be restarted. Please see database logs for more details.}

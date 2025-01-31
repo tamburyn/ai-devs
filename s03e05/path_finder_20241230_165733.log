@@ -1,0 +1,19 @@
+2024-12-30 16:57:33,770 - INFO - Successfully connected to Neo4j
+2024-12-30 16:57:33,771 - INFO - Sending query to API: SELECT id, username FROM users
+2024-12-30 16:57:34,071 - INFO - API response status: 200
+2024-12-30 16:57:34,072 - INFO - Retrieved 98 users
+2024-12-30 16:57:34,072 - INFO - Sending query to API: SELECT user1_id, user2_id FROM connections
+2024-12-30 16:57:34,373 - INFO - API response status: 200
+2024-12-30 16:57:34,373 - INFO - Retrieved 151 connections
+2024-12-30 16:57:34,374 - INFO - Attempting to connect to Neo4j...
+2024-12-30 16:57:34,374 - INFO - Testing connection...
+2024-12-30 16:57:34,378 - INFO - Connection test result: <Record test=1>
+2024-12-30 16:57:34,378 - INFO - Clearing existing data from Neo4j...
+2024-12-30 16:57:34,386 - INFO - Creating 98 users in Neo4j...
+2024-12-30 16:57:34,813 - INFO - Creating 151 connections in Neo4j...
+2024-12-30 16:57:35,433 - INFO - Successfully set up Neo4j database
+2024-12-30 16:57:35,437 - INFO - Found nodes: ['BARBARA']
+2024-12-30 16:57:35,438 - INFO - Rafal knows: []
+2024-12-30 16:57:35,439 - INFO - Barbara is known by: ['ALEKSANDER', 'OLIWIER']
+2024-12-30 16:57:35,441 - ERROR - No path found between RAFAL and BARBARA
+2024-12-30 16:57:35,441 - ERROR - Failed to find path between Rafal and Barbara

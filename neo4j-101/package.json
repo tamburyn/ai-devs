@@ -1,0 +1,11 @@
+{
+  "name": "bun-add-neo4j-driver",
+  "module": "bun start",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

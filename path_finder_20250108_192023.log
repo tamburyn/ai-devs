@@ -1,0 +1,38 @@
+2025-01-08 19:20:24,323 - INFO - Successfully connected to Neo4j
+2025-01-08 19:20:24,338 - INFO - Sending query to API: SELECT id, username FROM users
+2025-01-08 19:20:24,613 - INFO - API response status: 200
+2025-01-08 19:20:24,613 - INFO - Retrieved 98 users
+2025-01-08 19:20:24,613 - INFO - Sending query to API: SELECT user1_id, user2_id FROM connections
+2025-01-08 19:20:24,860 - INFO - API response status: 200
+2025-01-08 19:20:24,861 - INFO - Retrieved 151 connections
+2025-01-08 19:20:24,862 - INFO - Users data sample:
+2025-01-08 19:20:24,862 - INFO - Sample users: {1: 'ADRIAN', 2: 'MONIKA', 3: 'AZAZEL', 4: 'ROBERT', 5: 'ALEKSANDRA'}
+2025-01-08 19:20:24,862 - INFO - Connections sample:
+2025-01-08 19:20:24,863 - INFO - Sample connections: [(1, 5), (1, 20), (1, 54), (2, 14), (2, 45)]
+2025-01-08 19:20:24,863 - INFO - Attempting to connect to Neo4j...
+2025-01-08 19:20:24,863 - INFO - Testing connection...
+2025-01-08 19:20:24,876 - INFO - Connection test result: <Record test=1>
+2025-01-08 19:20:24,877 - INFO - Clearing existing data from Neo4j...
+2025-01-08 19:20:25,047 - INFO - Creating 98 users in Neo4j...
+2025-01-08 19:20:26,127 - INFO - Creating 151 connections in Neo4j...
+2025-01-08 19:20:27,204 - INFO - Successfully set up Neo4j database
+2025-01-08 19:20:27,267 - INFO - Found RAFAŁ nodes: [{'p.name': 'RAFAŁ', 'p.id': 28}]
+2025-01-08 19:20:27,391 - INFO - Connections for RAFAŁ (ID: 28): [{'other.name': 'ANDRZEJ', 'other.id': 84}, {'other.name': 'WERONIKA', 'other.id': 83}, {'other.name': 'MARIA', 'other.id': 17}, {'other.name': 'MICHAŁ', 'other.id': 6}, {'other.name': 'AZAZEL', 'other.id': 3}]
+2025-01-08 19:20:27,450 - INFO - Sample nodes: [{'p.name': 'ADRIAN', 'p.id': 1}, {'p.name': 'MONIKA', 'p.id': 2}, {'p.name': 'AZAZEL', 'p.id': 3}, {'p.name': 'ROBERT', 'p.id': 4}, {'p.name': 'ALEKSANDRA', 'p.id': 5}]
+2025-01-08 19:20:27,516 - INFO - Sample connections: [{'connection': 'WERONIKA knows MONIKA'}, {'connection': 'GRZEGORZ knows MONIKA'}, {'connection': 'ROBERT knows MONIKA'}, {'connection': 'DOROTA knows AZAZEL'}, {'connection': 'IWONA knows AZAZEL'}]
+2025-01-08 19:20:27,667 - INFO - RAFAŁ knows: ['ANDRZEJ', 'WERONIKA', 'MARIA', 'MICHAŁ', 'AZAZEL']
+2025-01-08 19:20:27,667 - INFO - RAFAŁ is known by: ['CEZARY', 'ZUZANNA', 'ŁUKASZ']
+2025-01-08 19:20:27,685 - INFO - BARBARA knows: ['ARTUR']
+2025-01-08 19:20:27,685 - INFO - BARBARA is known by: ['ALEKSANDER', 'OLIWIER']
+2025-01-08 19:20:27,826 - INFO - Possible connection through: ANNA
+2025-01-08 19:20:27,826 - INFO - Path: RAFAŁ -> ZUZANNA -> ANNA -> OLIWIER -> BARBARA
+2025-01-08 19:20:27,826 - INFO - Possible connection through: ANNA
+2025-01-08 19:20:27,826 - INFO - Path: RAFAŁ -> CEZARY -> ANNA -> OLIWIER -> BARBARA
+2025-01-08 19:20:27,827 - INFO - Possible connection through: KAZIMIERZ
+2025-01-08 19:20:27,827 - INFO - Path: RAFAŁ -> WERONIKA -> KAZIMIERZ -> OLIWIER -> BARBARA
+2025-01-08 19:20:27,827 - INFO - Possible connection through: ROKSANA
+2025-01-08 19:20:27,827 - INFO - Path: RAFAŁ -> MICHAŁ -> ROKSANA -> OLIWIER -> BARBARA
+2025-01-08 19:20:27,828 - INFO - Possible connection through: ROKSANA
+2025-01-08 19:20:27,828 - INFO - Path: RAFAŁ -> MARIA -> ROKSANA -> OLIWIER -> BARBARA
+2025-01-08 19:20:27,894 - INFO - Found path of length 3: RAFAŁ -> AZAZEL -> ALEKSANDER -> BARBARA
+2025-01-08 19:20:28,031 - INFO - Submit response: {'code': 0, 'message': '{{FLG:SPYWEB}}'}

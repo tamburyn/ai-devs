@@ -1,0 +1,1 @@
+2024-12-30 16:31:49,081 - ERROR - Failed to connect to Neo4j: {code: Neo.ClientError.Security.AuthenticationRateLimit} {message: The client has provided incorrect authentication details too many times in a row.}

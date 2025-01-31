@@ -1,0 +1,107 @@
+2024-12-30 16:30:26,542 - INFO - Sending query to API: SELECT id, username FROM users
+2024-12-30 16:30:26,859 - INFO - API response status: 200
+2024-12-30 16:30:26,859 - INFO - Sending query to API: SELECT user1_id, user2_id FROM connections
+2024-12-30 16:30:27,163 - INFO - API response status: 200
+2024-12-30 16:30:27,164 - INFO - Processed users: 98, connections: 151
+2024-12-30 16:30:27,164 - INFO - Attempting to connect to Neo4j...
+2024-12-30 16:30:27,164 - INFO - Testing connection...
+2024-12-30 16:30:27,170 - ERROR - Error setting up Neo4j database: {code: Neo.ClientError.Security.Unauthorized} {message: The client is unauthorized due to authentication failure.}
+2024-12-30 16:30:27,170 - ERROR - Error type: <class 'neo4j.exceptions.AuthError'>
+2024-12-30 16:30:27,170 - ERROR - Error message: The client is unauthorized due to authentication failure.
+2024-12-30 16:30:27,170 - ERROR - An error occurred: {code: Neo.ClientError.Security.Unauthorized} {message: The client is unauthorized due to authentication failure.}
+Traceback (most recent call last):
+  File "/Users/adrianlewtak/3rd-devs/s03e05/app.py", line 194, in solve
+    self.setup_neo4j_database(users, connections)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/adrianlewtak/3rd-devs/s03e05/app.py", line 108, in setup_neo4j_database
+    result = session.run("RETURN 1 as test")
+  File "/Users/adrianlewtak/3rd-devs/venv/lib/python3.13/site-packages/neo4j/_sync/work/session.py", line 313, in run
+    self._connect(self._config.default_access_mode)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/adrianlewtak/3rd-devs/venv/lib/python3.13/site-packages/neo4j/_sync/work/session.py", line 136, in _connect
+    super()._connect(
+    ~~~~~~~~~~~~~~~~^
+        access_mode, auth=self._config.auth, **acquire_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/adrianlewtak/3rd-devs/venv/lib/python3.13/site-packages/neo4j/_sync/work/workspace.py", line 184, in _connect
+    self._connection = self._pool.acquire(**acquire_kwargs_)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/adrianlewtak/3rd-devs/venv/lib/python3.13/site-packages/neo4j/_sync/io/_pool.py", line 1078, in acquire
+    self.ensure_routing_table_is_fresh(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        access_mode=access_mode,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        acquisition_timeout=timeout,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/adrianlewtak/3rd-devs/venv/lib/python3.13/site-packages/neo4j/_sync/io/_pool.py", line 1005, in ensure_routing_table_is_fresh
+    self.update_routing_table(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        database=database,
+        ^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        database_callback=database_callback,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/adrianlewtak/3rd-devs/venv/lib/python3.13/site-packages/neo4j/_sync/io/_pool.py", line 900, in update_routing_table
+    self._update_routing_table_from(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.address,
+        ^^^^^^^^^^^^^
+    ...<5 lines>...
+        database_callback=database_callback,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/adrianlewtak/3rd-devs/venv/lib/python3.13/site-packages/neo4j/_sync/io/_pool.py", line 833, in _update_routing_table_from
+    new_routing_table = self.fetch_routing_table(
+        address=address,
+    ...<4 lines>...
+        auth=auth,
+    )
+  File "/Users/adrianlewtak/3rd-devs/venv/lib/python3.13/site-packages/neo4j/_sync/io/_pool.py", line 746, in fetch_routing_table
+    new_routing_info = self.fetch_routing_info(
+        address,
+    ...<4 lines>...
+        acquisition_timeout,
+    )
+  File "/Users/adrianlewtak/3rd-devs/venv/lib/python3.13/site-packages/neo4j/_sync/io/_pool.py", line 707, in fetch_routing_info
+    cx = self._acquire(address, auth, deadline, None)
+  File "/Users/adrianlewtak/3rd-devs/venv/lib/python3.13/site-packages/neo4j/_sync/io/_pool.py", line 347, in _acquire
+    return connection_creator()
+  File "/Users/adrianlewtak/3rd-devs/venv/lib/python3.13/site-packages/neo4j/_sync/io/_pool.py", line 169, in connection_creator
+    connection = self.opener(
+        address, auth or self.pool_config.auth, deadline
+    )
+  File "/Users/adrianlewtak/3rd-devs/venv/lib/python3.13/site-packages/neo4j/_sync/io/_pool.py", line 630, in opener
+    return Bolt.open(
+           ~~~~~~~~~^
+        addr,
+        ^^^^^
+    ...<3 lines>...
+        pool_config=pool_config,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/adrianlewtak/3rd-devs/venv/lib/python3.13/site-packages/neo4j/_sync/io/_bolt.py", line 560, in open
+    connection.hello()
+    ~~~~~~~~~~~~~~~~^^
+  File "/Users/adrianlewtak/3rd-devs/venv/lib/python3.13/site-packages/neo4j/_sync/io/_bolt5.py", line 736, in hello
+    self.fetch_all()
+    ~~~~~~~~~~~~~~^^
+  File "/Users/adrianlewtak/3rd-devs/venv/lib/python3.13/site-packages/neo4j/_sync/io/_bolt.py", line 1009, in fetch_all
+    detail_delta, summary_delta = self.fetch_message()
+                                  ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/adrianlewtak/3rd-devs/venv/lib/python3.13/site-packages/neo4j/_sync/io/_bolt.py", line 994, in fetch_message
+    res = self._process_message(tag, fields)
+  File "/Users/adrianlewtak/3rd-devs/venv/lib/python3.13/site-packages/neo4j/_sync/io/_bolt5.py", line 1204, in _process_message
+    response.on_failure(summary_metadata or {})
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/adrianlewtak/3rd-devs/venv/lib/python3.13/site-packages/neo4j/_sync/io/_common.py", line 295, in on_failure
+    raise self._hydrate_error(metadata)
+neo4j.exceptions.AuthError: {code: Neo.ClientError.Security.Unauthorized} {message: The client is unauthorized due to authentication failure.}

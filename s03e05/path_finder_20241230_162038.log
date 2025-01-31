@@ -1,0 +1,9 @@
+2024-12-30 16:20:38,372 - INFO - Sending query to API: SELECT id, username FROM users
+2024-12-30 16:20:38,715 - INFO - API response status: 200
+2024-12-30 16:20:38,716 - INFO - Sending query to API: SELECT user1_id, user2_id FROM connections
+2024-12-30 16:20:39,010 - INFO - API response status: 200
+2024-12-30 16:20:39,011 - INFO - Processed users: 98, connections: 151
+2024-12-30 16:20:39,011 - INFO - Clearing existing data from Neo4j...
+2024-12-30 16:20:39,015 - ERROR - Error setting up Neo4j database: {code: Neo.ClientError.Security.Unauthorized} {message: The client is unauthorized due to authentication failure.}
+2024-12-30 16:20:39,018 - ERROR - Error finding shortest path: {code: Neo.ClientError.Security.AuthenticationRateLimit} {message: The client has provided incorrect authentication details too many times in a row.}
+2024-12-30 16:20:39,018 - ERROR - Failed to find path between Rafal and Barbara
